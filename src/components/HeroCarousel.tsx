@@ -1,0 +1,140 @@
+
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+interface Slide {
+  id: number;
+  image: string;
+  title: string;
+  subtitle: string;
+}
+
+const slides: Slide[] = [
+  {
+    id: 1,
+    image: 'https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=2215&auto=format&fit=crop',
+    title: 'Exclusive Corporate Gifts',
+    subtitle: 'Thoughtfully curated premium gifts for your business partners'
+  },
+  {
+    id: 2,
+    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop',
+    title: 'Bespoke Gift Collections',
+    subtitle: 'Customized gift hampers for every occasion'
+  },
+  {
+    id: 3,
+    image: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?q=80&w=2370&auto=format&fit=crop',
+    title: 'Personalized Luxury',
+    subtitle: 'Elegant and personalized gifting solutions'
+  }
+];
+
+const HeroCarousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [currentSlide]);
+
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+
+  return (
+    <div className="relative h-screen overflow-hidden">
+      {/* Carousel slides */}
+      {slides.map((slide, index) => (
+        <div
+          key={slide.id}
+          className={cn(
+            "absolute inset-0 transition-opacity duration-1000 ease-in-out",
+            currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
+          )}
+        >
+          {/* Background Image with overlay */}
+          <div className="absolute inset-0 bg-black/30 z-10"></div>
+          <img
+            src={slide.image}
+            alt={slide.title}
+            className="w-full h-full object-cover animate-image-fade"
+            onLoad={handleImageLoad}
+          />
+          
+          {/* Content */}
+          <div className="absolute inset-0 z-20 flex items-center justify-center text-white p-6">
+            <div className="max-w-4xl text-center space-y-6">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight animate-slide-up">
+                {slide.title}
+              </h1>
+              <p className="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                {slide.subtitle}
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+                <button className="btn-primary min-w-[180px]">
+                  Explore Collection
+                </button>
+                <button className="btn-outline border-white text-white hover:bg-white hover:text-primary min-w-[180px]">
+                  Contact Us
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      {/* Navigation buttons */}
+      <button
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all"
+        onClick={prevSlide}
+      >
+        <ChevronLeft size={24} />
+      </button>
+      <button
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all"
+        onClick={nextSlide}
+      >
+        <ChevronRight size={24} />
+      </button>
+
+      {/* Indicators */}
+      <div className="absolute bottom-8 left-0 right-0 z-30 flex justify-center space-x-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            className={`w-3 h-3 rounded-full transition-all ${
+              currentSlide === index
+                ? "bg-white w-10"
+                : "bg-white/50"
+            }`}
+            onClick={() => setCurrentSlide(index)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default HeroCarousel;
