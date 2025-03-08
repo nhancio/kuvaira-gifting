@@ -35,7 +35,7 @@ const Navbar = () => {
             className="flex items-center space-x-2 text-primary hover:opacity-90 transition-opacity"
           >
             <Gift size={32} strokeWidth={1.5} />
-            <span className="text-2xl font-serif font-bold">GiftElite</span>
+            <span className="text-2xl font-serif font-bold">Kuvaira</span>
           </Link>
 
           {/* Desktop Navigation */}

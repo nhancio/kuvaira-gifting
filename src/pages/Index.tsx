@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -40,23 +39,71 @@ const featuredProducts = [
 const testimonials = [
   {
     id: 1,
-    text: "GiftElite provided exceptional service for our company event. The customized gift boxes were elegant and perfectly aligned with our brand identity.",
+    text: "Kuvaira provided exceptional service for our company event. The customized gift boxes were elegant and perfectly aligned with our brand identity.",
     author: "Priya Sharma",
     position: "HR Director, Tech Solutions Inc."
   },
   {
     id: 2,
-    text: "We needed 500 premium gift sets for our clients during Diwali, and GiftElite delivered beyond expectations. The attention to detail was impressive.",
+    text: "We needed 500 premium gift sets for our clients during Diwali, and Kuvaira delivered beyond expectations. The attention to detail was impressive.",
     author: "Rajesh Kumar",
     position: "Marketing Head, Global Finance"
   },
   {
     id: 3,
-    text: "The personalized touch that GiftElite adds to every product makes them stand out. Our clients loved the thoughtful corporate gifts.",
+    text: "The personalized touch that Kuvaira adds to every product makes them stand out. Our clients loved the thoughtful corporate gifts.",
     author: "Ananya Desai",
     position: "CEO, Innovate Studios"
   }
 ];
+
+// Add partners data
+const partners = [
+  {
+    id: 1,
+    name: "Crafts by Shravs",
+    description: "Inhouse design studio"
+  },
+  {
+    id: 2,
+    name: "LuxyStudio",
+    description: "Luxury electronics and accessories"
+  },
+  {
+    id: 3,
+    name: "Nhancio",
+    description: "Software partner and client"
+  }
+];
+
+const PartnersSection = () => (
+  <section className="py-24">
+    <div className="container mx-auto px-4 md:px-6">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-4">Our Partners</h2>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Collaborating with the best to deliver exceptional gifting experiences.
+        </p>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {partners.map((partner) => (
+          <motion.div
+            key={partner.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="bg-white p-8 rounded-lg shadow-sm border border-border text-center"
+          >
+            <h3 className="text-xl font-serif font-medium mb-2">{partner.name}</h3>
+            <p className="text-muted-foreground">{partner.description}</p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 const Index = () => {
   return (
@@ -204,7 +251,7 @@ const Index = () => {
       
       {/* CTA Section */}
       <section className="py-24 bg-pastel-lavender/30 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-20">  {/* Reduced opacity from 0.3 to 0.2 */}
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
             <defs>
               <pattern id="pattern" width="10" height="10" patternUnits="userSpaceOnUse">
@@ -243,7 +290,7 @@ const Index = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <Link to="/contact" className="btn-primary min-w-[180px]">
-                Get Started
+                Contact Us
               </Link>
               <Link to="/portfolio" className="btn-outline min-w-[180px]">
                 Explore Collections
@@ -253,46 +300,8 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Testimonials Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-4">Client Testimonials</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Hear what our clients have to say about their experience with GiftElite.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white p-8 rounded-lg shadow-sm border border-border relative"
-              >
-                <div className="absolute top-6 right-6 text-pastel-pink">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" className="opacity-20">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <div className="flex items-center space-x-1 mb-4 text-yellow-500">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} fill="currentColor" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-6">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-medium text-foreground">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.position}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Partners Section */}
+      <PartnersSection />
       
       <Footer />
     </div>

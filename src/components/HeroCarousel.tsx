@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -79,7 +78,7 @@ const HeroCarousel = () => {
           <img
             src={slide.image}
             alt={slide.title}
-            className="w-full h-full object-cover animate-image-fade"
+            className="w-full h-full object-cover opacity-100 animate-image-fade" // Added opacity here
             onLoad={handleImageLoad}
           />
           

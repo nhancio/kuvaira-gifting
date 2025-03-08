@@ -11,17 +11,17 @@ const Contact = () => {
     {
       icon: <MapPin size={24} className="text-primary" />,
       title: "Our Location",
-      details: ["123 Jubilee Hills, Road No. 5", "Hyderabad, Telangana 500033"]
+      details: ["Tulip-D, Star Homes, IDPL, Balanagar, Hyderabad, Telangana 500054, India"]
     },
     {
       icon: <Phone size={24} className="text-primary" />,
       title: "Phone Number",
-      details: ["+91 98765 43210", "+91 98765 43211"]
+      details: ["+91 63044 087747", "+91 98765 43211"]
     },
     {
       icon: <Mail size={24} className="text-primary" />,
       title: "Email Address",
-      details: ["hello@giftelite.com", "support@giftelite.com"]
+      details: ["shravya@Kuvaira.com", "support@Kuvaira.com"]
     },
     {
       icon: <Clock size={24} className="text-primary" />,

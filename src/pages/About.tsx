@@ -13,7 +13,7 @@ const About = () => {
       name: "Aarav Patel",
       position: "Founder & CEO",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2370&auto=format&fit=crop",
-      bio: "With over 15 years of experience in corporate gifting, Aarav founded GiftElite to provide premium gifting solutions to businesses in Hyderabad."
+      bio: "With over 15 years of experience in corporate gifting, Aarav founded Kuvaira to provide premium gifting solutions to businesses in Hyderabad."
     },
     {
       name: "Priya Sharma",
@@ -76,7 +76,7 @@ const About = () => {
                 Creating Thoughtful Gifting Experiences
               </h2>
               <p className="text-muted-foreground">
-                Founded in 2015 in the heart of Hyderabad, GiftElite began with a simple mission: to elevate corporate gifting into an art form that builds meaningful connections between businesses and their stakeholders.
+                Founded in 2015 in the heart of Hyderabad, Kuvaira began with a simple mission: to elevate corporate gifting into an art form that builds meaningful connections between businesses and their stakeholders.
               </p>
               <p className="text-muted-foreground">
                 What started as a small boutique operation has grown into a premier gifting service trusted by over 200 corporate clients across India. Our journey has been driven by attention to detail, commitment to quality, and a passion for creating memorable unboxing experiences.
@@ -95,7 +95,7 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-4">Our Core Values</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide everything we do at GiftElite.
+              The principles that guide everything we do at Kuvaira.
             </p>
           </div>
           
@@ -177,7 +177,7 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-4">Meet Our Team</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The creative minds behind GiftElite's exquisite gifting solutions.
+              The creative minds behind Kuvaira's exquisite gifting solutions.
             </p>
           </div>
           
