@@ -66,8 +66,8 @@ const partners = [
   },
   {
     id: 2,
-    name: "LuxyStudio",
-    description: "Luxury electronics and accessories"
+    name: "Reel Sync Studio",
+    description: "Media production partner"
   },
   {
     id: 3,
