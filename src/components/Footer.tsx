@@ -20,9 +20,6 @@ const Footer = () => {
               creating memorable experiences through thoughtful and elegant gifts.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Facebook size={20} />
-              </a>
               <a 
                 href="https://www.instagram.com/_kuvaira_/" 
                 target="_blank" 
@@ -30,12 +27,6 @@ const Footer = () => {
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Instagram size={20} />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin size={20} />
               </a>
             </div>
           </div>
@@ -112,14 +103,14 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={20} className="text-primary flex-shrink-0" />
-                <a href="tel:+918919707387" className="text-muted-foreground hover:text-primary transition-colors">
-                  +91 8919 707387
+                <a href="tel:+9163044 08747" className="text-muted-foreground hover:text-primary transition-colors">
+                  +91 63044 08747
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={20} className="text-primary flex-shrink-0" />
-                <a href="mailto:shravya@kuvaira.com" className="text-muted-foreground hover:text-primary transition-colors">
-                  shravya@kuvaira.com
+                <a href="mailto:shravya@kuvaira.in" className="text-muted-foreground hover:text-primary transition-colors">
+                  shravya@kuvaira.in
                 </a>
               </li>
             </ul>
@@ -127,7 +118,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-8 pt-6 text-center text-muted-foreground">
-          <p>&copy; {currentYear} Kuvaira. All rights reserved.</p>
+          <p>&copy; {currentYear} Kuvaira. All rights reserved</p>
         </div>
       </div>
     </footer>

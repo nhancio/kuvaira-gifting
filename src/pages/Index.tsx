@@ -115,13 +115,65 @@ const Index = () => {
         <HeroCarousel />
       </section>
       
-      {/* Features Section */}
+      {/* Featured Products Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+            <div>
+              <motion.h2 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="text-3xl md:text-5xl font-serif font-semibold mb-4"
+              >
+                Our Portfolio
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="text-lg text-muted-foreground max-w-xl"
+              >
+                Explore our most popular corporate gifting collections, designed to impress.
+              </motion.p>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Link to="/portfolio" className="text-primary font-medium flex items-center gap-2 hover:underline">
+                <span>View All Collections</span>
+                <ArrowRight size={18} />
+              </Link>
+            </motion.div>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredProducts.map((product, index) => (
+              <GiftCard
+                key={product.id}
+                id={product.id}
+                image={product.image}
+                title={product.title}
+                category={product.category}
+                delay={index}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* About Us Section */}
       <section className="py-20 bg-pastel-mint/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-4">Why Choose Us</h2>
+            <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-4">About Us</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We provide exceptional gifting experiences with premium quality products and personalized service.
+              Discovered in the meaning of "Kuvaira"—the truly unique and rare—our signature touch transforms the art of giving into an emotional journey. Each handcrafted gift carries warmth that lingers long after the moment passes, blending luxurious elements with personal sentiment that speaks directly to the heart. In a world of fleeting exchanges, we craft lasting impressions through packages that tell sophisticated stories. Kuvaira doesn't simply deliver gifts; we create unforgettable experiences where every gesture is not just exchanged, but deeply felt.
             </p>
           </div>
           
@@ -193,58 +245,6 @@ const Index = () => {
                 Personalized assistance throughout your gifting journey.
               </p>
             </motion.div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Featured Products Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
-            <div>
-              <motion.h2 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="text-3xl md:text-5xl font-serif font-semibold mb-4"
-              >
-                Featured Collections
-              </motion.h2>
-              <motion.p 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="text-lg text-muted-foreground max-w-xl"
-              >
-                Explore our most popular corporate gifting collections, designed to impress.
-              </motion.p>
-            </div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <Link to="/portfolio" className="text-primary font-medium flex items-center gap-2 hover:underline">
-                <span>View All Collections</span>
-                <ArrowRight size={18} />
-              </Link>
-            </motion.div>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product, index) => (
-              <GiftCard
-                key={product.id}
-                id={product.id}
-                image={product.image}
-                title={product.title}
-                category={product.category}
-                delay={index}
-              />
-            ))}
           </div>
         </div>
       </section>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
@@ -147,6 +146,41 @@ const Portfolio = () => {
             <a href="/contact" className="btn-primary">
               Discuss Your Requirements
             </a>
+          </div>
+        </div>
+      </section>
+      
+      {/* Product Categories and Taglines */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-serif font-semibold mb-6">Our Portfolio</h1>
+            <p className="text-lg text-muted-foreground">
+              Discover our diverse range of gifting solutions.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <h2 className="text-2xl font-serif font-semibold mb-4">Onboarding Gifts</h2>
+              <p className="text-muted-foreground">Tagline: "A seamless start begins with the perfect gift."</p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <h2 className="text-2xl font-serif font-semibold mb-4">Festive Gifting</h2>
+              <p className="text-muted-foreground">Tagline: "Celebrate moments, gift with grandeur."</p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <h2 className="text-2xl font-serif font-semibold mb-4">Corporate Gifting</h2>
+              <p className="text-muted-foreground">Tagline: "Celebrate moments, gift with grandeur."</p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <h2 className="text-2xl font-serif font-semibold mb-4">Wedding Gifts</h2>
+              <p className="text-muted-foreground">Tagline: "Because every wedding deserves an unforgettable gift."</p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <h2 className="text-2xl font-serif font-semibold mb-4">Electronic Gifts/Gadgets</h2>
+              <p className="text-muted-foreground">Tagline: "Innovation meets elegance, gifting meets tech."</p>
+            </div>
           </div>
         </div>
       </section>

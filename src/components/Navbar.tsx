@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Gift } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,10 +21,10 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md ${
         isScrolled 
-          ? 'py-3 bg-white shadow-md' 
-          : 'py-6 bg-transparent'
+          ? 'py-3 bg-white/90 shadow-lg' 
+          : 'py-6 bg-gradient-to-b from-black/20 to-transparent'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -34,22 +33,45 @@ const Navbar = () => {
             to="/" 
             className="flex items-center space-x-2 text-primary hover:opacity-90 transition-opacity"
           >
-            <Gift size={32} strokeWidth={1.5} />
-            <span className="text-2xl font-serif font-bold">Kuvaira</span>
+            <img 
+              src="/logo/8.png" 
+              alt="Kuvaira Logo" 
+              className="h-12 w-auto"
+            />
+            <span className="text-2xl font-serif font-bold text-white">Kuvaira</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="nav-link">Home</Link>
-            <Link to="/portfolio" className="nav-link">Portfolio</Link>
-            <Link to="/about" className="nav-link">About Us</Link>
-            <Link to="/contact" className="nav-link">Contact</Link>
-            <Link to="/contact" className="btn-primary">Get Started</Link>
+          <div className="hidden md:flex items-center space-x-2">
+            <Link 
+              to="/" 
+              className="px-4 py-2 rounded-full text-black hover:bg-black/10 transition-all duration-300"
+            >
+              Home
+            </Link>
+            <Link 
+              to="/portfolio" 
+              className="px-4 py-2 rounded-full text-black hover:bg-black/10 transition-all duration-300"
+            >
+              Portfolio
+            </Link>
+            <Link 
+              to="/about" 
+              className="px-4 py-2 rounded-full text-black hover:bg-black/10 transition-all duration-300"
+            >
+              About Us
+            </Link>
+            <Link 
+              to="/contact" 
+              className="px-4 py-2 rounded-full text-black hover:bg-black/10 transition-all duration-300"
+            >
+              Contact
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden focus:outline-none"
+            className="md:hidden focus:outline-none text-white"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -65,11 +87,34 @@ const Navbar = () => {
           }`}
         >
           <div className="flex flex-col space-y-4 mt-4">
-            <Link to="/" className="nav-link" onClick={() => setIsOpen(false)}>Home</Link>
-            <Link to="/portfolio" className="nav-link" onClick={() => setIsOpen(false)}>Portfolio</Link>
-            <Link to="/about" className="nav-link" onClick={() => setIsOpen(false)}>About Us</Link>
-            <Link to="/contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact</Link>
-            <Link to="/contact" className="btn-primary text-center" onClick={() => setIsOpen(false)}>Get Started</Link>
+            <Link 
+              to="/" 
+              onClick={() => setIsOpen(false)}
+              className="px-4 py-2 rounded-md text-black hover:bg-black/10 transition-all duration-300"
+            >
+              Home
+            </Link>
+            <Link 
+              to="/portfolio" 
+              onClick={() => setIsOpen(false)}
+              className="px-4 py-2 rounded-md text-black hover:bg-black/10 transition-all duration-300"
+            >
+              Portfolio
+            </Link>
+            <Link 
+              to="/about" 
+              onClick={() => setIsOpen(false)}
+              className="px-4 py-2 rounded-md text-black hover:bg-black/10 transition-all duration-300"
+            >
+              About Us
+            </Link>
+            <Link 
+              to="/contact" 
+              onClick={() => setIsOpen(false)}
+              className="px-4 py-2 rounded-md text-black hover:bg-black/10 transition-all duration-300"
+            >
+              Contact
+            </Link>
           </div>
         </div>
       </div>

@@ -1,8 +1,5 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Eye } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 interface GiftCardProps {
   id: string;
@@ -12,38 +9,25 @@ interface GiftCardProps {
   delay?: number;
 }
 
-const GiftCard: React.FC<GiftCardProps> = ({ id, image, title, category, delay = 0 }) => {
+const GiftCard: React.FC<GiftCardProps> = ({ image, title, category, delay = 0 }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: delay * 0.1 }}
       viewport={{ once: true }}
-      className="group relative overflow-hidden rounded-lg"
+      className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
     >
-      <div className="aspect-square overflow-hidden">
+      <div className="aspect-square relative">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover"
         />
       </div>
-      
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-        <h3 className="text-xl text-white font-medium font-serif">{title}</h3>
-        <p className="text-white/80 text-sm mb-4">{category}</p>
-        
-        <Link 
-          to={`/portfolio/${id}`}
-          className="flex items-center gap-2 text-white bg-primary/80 backdrop-blur-sm w-max py-2 px-4 rounded-full text-sm"
-        >
-          <Eye size={16} />
-          <span>View Details</span>
-        </Link>
-      </div>
-      
-      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium">
-        {category}
+      <div className="p-4">
+        <h3 className="font-serif font-medium text-lg mb-1">{title}</h3>
+        <p className="text-sm text-muted-foreground">{category}</p>
       </div>
     </motion.div>
   );

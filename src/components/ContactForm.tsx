@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import { toast } from 'sonner';
@@ -7,7 +6,6 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     subject: '',
     message: ''
   });
@@ -32,7 +30,6 @@ const ContactForm = () => {
       setFormData({
         name: '',
         email: '',
-        phone: '',
         subject: '',
         message: ''
       });
@@ -76,21 +73,6 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full px-4 py-3 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
             placeholder="john@example.com"
-          />
-        </div>
-        
-        <div className="space-y-2">
-          <label htmlFor="phone" className="block text-sm font-medium">
-            Phone Number
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full px-4 py-3 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-            placeholder="+91 63044 087747"
           />
         </div>
         
