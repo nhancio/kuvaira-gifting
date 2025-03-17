@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import { toast } from 'sonner';
-import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -24,32 +23,16 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Simulate API call
     try {
-      // Replace these with your actual EmailJS credentials
-      const result = await emailjs.send(
-        'YOUR_SERVICE_ID', // Get this from EmailJS
-        'YOUR_TEMPLATE_ID', // Get this from EmailJS
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          to_email: 'Shravya@kuvaira.in' // Your email address
-        },
-        'YOUR_PUBLIC_KEY' // Get this from EmailJS
-      );
-
-      if (result.text === 'OK') {
-        toast.success('Message sent successfully! We will get back to you soon.');
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-      } else {
-        throw new Error('Failed to send message');
-      }
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      toast.success('Message sent successfully! We will get back to you soon.');
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
     } catch (error) {
       toast.error('Failed to send message. Please try again.');
       console.error('Error sending form:', error);

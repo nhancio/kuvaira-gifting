@@ -34,7 +34,7 @@ const Navbar = () => {
             className="flex items-center space-x-2 text-primary hover:opacity-90 transition-opacity"
           >
             <img 
-              src="/logo/8.png" 
+              src="/logo/3.png" 
               alt="Kuvaira Logo" 
               className="h-12 w-auto"
             />
