@@ -6,16 +6,16 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-muted py-10">
+    <footer className="bg-muted py-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Column 1 - About */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <Gift size={28} className="text-primary" />
-              <span className="text-2xl font-serif font-bold text-primary">Kuvaira</span>
+            <div className="flex items-center space-x-3">
+              <img src="/logo/3.png" alt="Kuvaira" className="h-8" />
+              <span className="text-2xl font-serif font-bold text-black">Kuvaira</span>
             </div>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed text-sm">
               Premium corporate gifting solutions in Hyderabad, 
               creating memorable experiences through thoughtful and elegant gifts.
             </p>
@@ -33,7 +33,7 @@ const Footer = () => {
 
           {/* Column 2 - Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
+            <h3 className="text-base font-semibold">Quick Links</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
@@ -51,8 +51,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
-                  Contact
+                <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  Contact Us
                 </Link>
               </li>
             </ul>
@@ -60,7 +60,7 @@ const Footer = () => {
 
           {/* Column 3 - Services */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Our Services</h3>
+            <h3 className="text-base font-semibold">Our Offerings</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -92,14 +92,19 @@ const Footer = () => {
 
           {/* Column 4 - Contact */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Contact Us</h3>
-            <ul className="space-y-4">
+            <h3 className="text-base font-semibold">Contact Us</h3>
+            <ul className="space-y-4 text-sm">
               <li className="flex items-start space-x-3">
-                <MapPin size={20} className="text-primary mt-1 flex-shrink-0" />
-                <span className="text-muted-foreground">
-                Tulip-D, Star Homes, IDPL, Balanagar,
-                Hyderabad-500054
-                </span>
+                <MapPin size={18} className="text-primary mt-1 flex-shrink-0" />
+                <a 
+                  href="https://maps.app.goo.gl/z2DUUC4pezxmpxS59"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Tulip-D, Star Homes, IDPL, Balanagar,
+                  Hyderabad-500054
+                </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={20} className="text-primary flex-shrink-0" />
@@ -117,7 +122,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-6 text-center text-muted-foreground">
+        <div className="border-t border-border mt-6 pt-4 text-center text-muted-foreground text-sm">
           <p>&copy; {currentYear} Kuvaira. All rights reserved</p>
         </div>
       </div>

@@ -5,6 +5,7 @@ import HeroCarousel from '@/components/HeroCarousel';
 import GiftCard from '@/components/GiftCard';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Contact from '@/components/Contact';
 import { Gift, Clock, Package, Users, ArrowRight, Star } from 'lucide-react';
 
 // Featured products data
@@ -111,12 +112,12 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative">
+      <section id="home-section" className="relative">
         <HeroCarousel />
       </section>
       
-      {/* Featured Products Section */}
-      <section className="py-24">
+      {/* Portfolio Section */}
+      <section id="portfolio-section" className="py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
             <div>
@@ -168,7 +169,7 @@ const Index = () => {
       </section>
       
       {/* About Us Section */}
-      <section className="py-20 bg-pastel-mint/30">
+      <section id="about-section" className="py-20 bg-pastel-mint/30">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-4">About Us</h2>
@@ -249,55 +250,17 @@ const Index = () => {
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="py-24 bg-pastel-lavender/30 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">  {/* Reduced opacity from 0.3 to 0.2 */}
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <pattern id="pattern" width="10" height="10" patternUnits="userSpaceOnUse">
-                <circle cx="1" cy="1" r="1" fill="currentColor" className="text-primary" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#pattern)" />
-          </svg>
-        </div>
-        
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-serif font-semibold mb-6"
-            >
-              Ready to Create a Memorable Gifting Experience?
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-lg text-muted-foreground mb-8"
-            >
-              Let us help you design the perfect corporate gifting strategy that aligns with your brand values and creates lasting impressions.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <Link to="/contact" className="btn-primary min-w-[180px]">
-                Contact Us
-              </Link>
-              <Link to="/portfolio" className="btn-outline min-w-[180px]">
-                Explore Collections
-              </Link>
-            </motion.div>
+      {/* Contact Section */}
+      <section id="contact-section">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-serif font-semibold mb-4">Contact Us</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Get in touch with us to discuss your corporate gifting needs.
+            </p>
           </div>
         </div>
+        <Contact />
       </section>
       
       {/* Partners Section */}

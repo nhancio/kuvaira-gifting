@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send } from 'lucide-react';
 import { toast } from 'sonner';
+import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,10 @@ const ContactForm = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_USER_ID);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -22,10 +27,20 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
+
+    const templateParams = {
+      name: formData.name,            // Changed from from_name
+      email: formData.email,          // Changed from from_email
+      subject: formData.subject,      // This was correct
+      message: formData.message,      // This was correct
+    };
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
       toast.success('Message sent successfully! We will get back to you soon.');
       setFormData({
         name: '',
@@ -59,7 +74,6 @@ const ContactForm = () => {
             placeholder="John Doe"
           />
         </div>
-        
         <div className="space-y-2">
           <label htmlFor="email" className="block text-sm font-medium">
             Email Address <span className="text-red-500">*</span>
@@ -75,7 +89,6 @@ const ContactForm = () => {
             placeholder="john@example.com"
           />
         </div>
-        
         <div className="space-y-2">
           <label htmlFor="subject" className="block text-sm font-medium">
             Subject <span className="text-red-500">*</span>
@@ -96,7 +109,6 @@ const ContactForm = () => {
           </select>
         </div>
       </div>
-      
       <div className="space-y-2">
         <label htmlFor="message" className="block text-sm font-medium">
           Your Message <span className="text-red-500">*</span>
@@ -108,11 +120,10 @@ const ContactForm = () => {
           required
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+          className="w-full px-4 py-3 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
           placeholder="Tell us about your requirements..."
         />
       </div>
-      
       <button
         type="submit"
         disabled={isSubmitting}

@@ -10,7 +10,17 @@ const Contact = () => {
     {
       icon: <MapPin size={24} className="text-primary" />,
       title: "Our Location",
-      details: ["Tulip-D, Star Homes, IDPL, Balanagar, Hyderabad, Telangana 500054, India"]
+      details: [
+        <a 
+          key="address"
+          href="https://maps.app.goo.gl/z2DUUC4pezxmpxS59"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted-foreground hover:text-primary transition-colors"
+        >
+          Tulip-D, Star Homes, IDPL, Balanagar, Hyderabad, Telangana 500054, India
+        </a>
+      ]
     },
     {
       icon: <Phone size={24} className="text-primary" />,

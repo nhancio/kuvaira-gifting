@@ -30,6 +30,63 @@ const slides: Slide[] = [
   }
 ];
 
+const heroSlides = [
+  {
+    image: 'https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=2215&auto=format&fit=crop',
+    title: 'Exclusive Corporate Gifts',
+    description: 'Thoughtfully curated premium gifts for your business partners',
+    primaryButton: {
+      text: 'Explore Collection',
+      link: '/portfolio'  // Updated to direct link
+    },
+    secondaryButton: {
+      text: 'Contact Us',
+      action: () => {
+        const contactSection = document.getElementById('contact-section');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop',
+    title: 'Bespoke Gift Collections',
+    description: 'Customized gift hampers for every occasion',
+    primaryButton: {
+      text: 'Explore Collection',
+      link: '/portfolio'  // Updated to direct link
+    },
+    secondaryButton: {
+      text: 'Contact Us',
+      action: () => {
+        const contactSection = document.getElementById('contact-section');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?q=80&w=2370&auto=format&fit=crop',
+    title: 'Personalized Luxury',
+    description: 'Elegant and personalized gifting solutions',
+    primaryButton: {
+      text: 'Explore Collection',
+      link: '/portfolio'  // Updated to direct link
+    },
+    secondaryButton: {
+      text: 'Contact Us',
+      action: () => {
+        const contactSection = document.getElementById('contact-section');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  }
+];
+
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -65,9 +122,9 @@ const HeroCarousel = () => {
   return (
     <div className="relative h-screen overflow-hidden">
       {/* Carousel slides */}
-      {slides.map((slide, index) => (
+      {heroSlides.map((slide, index) => (
         <div
-          key={slide.id}
+          key={index}
           className={cn(
             "absolute inset-0 transition-opacity duration-1000 ease-in-out",
             currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
@@ -89,14 +146,14 @@ const HeroCarousel = () => {
                 {slide.title}
               </h1>
               <p className="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                {slide.subtitle}
+                {slide.description}
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-                <button className="btn-primary min-w-[180px]">
-                  Explore Collection
-                </button>
-                <button className="btn-outline border-white text-white hover:bg-white hover:text-primary min-w-[180px]">
-                  Contact Us
+                <a href={slide.primaryButton.link} className="btn-primary min-w-[180px]">
+                  {slide.primaryButton.text}
+                </a>
+                <button className="btn-outline border-white text-white hover:bg-white hover:text-primary min-w-[180px]" onClick={slide.secondaryButton.action}>
+                  {slide.secondaryButton.text}
                 </button>
               </div>
             </div>
@@ -120,7 +177,7 @@ const HeroCarousel = () => {
 
       {/* Indicators */}
       <div className="absolute bottom-8 left-0 right-0 z-30 flex justify-center space-x-3">
-        {slides.map((_, index) => (
+        {heroSlides.map((_, index) => (
           <button
             key={index}
             className={`w-3 h-3 rounded-full transition-all ${

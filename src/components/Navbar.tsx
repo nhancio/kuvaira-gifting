@@ -1,10 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, Gift } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home first
+      navigate('/', { state: { scrollTo: sectionId } });
+    } else {
+      // If already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsOpen(false);
+      }
+    }
+  };
+
+  // Listen for navigation state containing scroll target
+  useEffect(() => {
+    if (location.state && location.state.scrollTo) {
+      const sectionId = location.state.scrollTo;
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        // Clear the state after scrolling
+        navigate(location.pathname, { replace: true, state: {} });
+      }
+    }
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,35 +67,35 @@ const Navbar = () => {
               alt="Kuvaira Logo" 
               className="h-12 w-auto"
             />
-            <span className="text-2xl font-serif font-bold text-white">Kuvaira</span>
+            <span className="text-2xl font-serif font-bold text-black">Kuvaira</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2">
-            <Link 
-              to="/" 
+            <button 
+              onClick={() => scrollToSection('home-section')}
               className="px-4 py-2 rounded-full text-black hover:bg-black/10 transition-all duration-300"
             >
               Home
-            </Link>
-            <Link 
-              to="/portfolio" 
+            </button>
+            <button 
+              onClick={() => scrollToSection('portfolio-section')}
               className="px-4 py-2 rounded-full text-black hover:bg-black/10 transition-all duration-300"
             >
               Portfolio
-            </Link>
-            <Link 
-              to="/about" 
+            </button>
+            <button 
+              onClick={() => scrollToSection('about-section')}
               className="px-4 py-2 rounded-full text-black hover:bg-black/10 transition-all duration-300"
             >
               About Us
-            </Link>
-            <Link 
-              to="/contact" 
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact-section')}
               className="px-4 py-2 rounded-full text-black hover:bg-black/10 transition-all duration-300"
             >
-              Contact
-            </Link>
+              Contact Us
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -87,34 +116,30 @@ const Navbar = () => {
           }`}
         >
           <div className="flex flex-col space-y-4 mt-4">
-            <Link 
-              to="/" 
-              onClick={() => setIsOpen(false)}
+            <button 
+              onClick={() => scrollToSection('home-section')}
               className="px-4 py-2 rounded-md text-black hover:bg-black/10 transition-all duration-300"
             >
               Home
-            </Link>
-            <Link 
-              to="/portfolio" 
-              onClick={() => setIsOpen(false)}
+            </button>
+            <button 
+              onClick={() => scrollToSection('portfolio-section')}
               className="px-4 py-2 rounded-md text-black hover:bg-black/10 transition-all duration-300"
             >
               Portfolio
-            </Link>
-            <Link 
-              to="/about" 
-              onClick={() => setIsOpen(false)}
+            </button>
+            <button 
+              onClick={() => scrollToSection('about-section')}
               className="px-4 py-2 rounded-md text-black hover:bg-black/10 transition-all duration-300"
             >
               About Us
-            </Link>
-            <Link 
-              to="/contact" 
-              onClick={() => setIsOpen(false)}
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact-section')}
               className="px-4 py-2 rounded-md text-black hover:bg-black/10 transition-all duration-300"
             >
-              Contact
-            </Link>
+              Contact Us
+            </button>
           </div>
         </div>
       </div>
