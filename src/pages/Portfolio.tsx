@@ -15,7 +15,7 @@ const portfolioItems = [
   },
   {
     id: "2",
-    image: "https://images.unsplash.com/photo-1608185944099-7638db8051a6?q=80&w=2487&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop",
     title: "Luxury Tea Collection",
     category: "Premium"
   },
@@ -27,7 +27,7 @@ const portfolioItems = [
   },
   {
     id: "4",
-    image: "https://images.unsplash.com/photo-1612277676054-89c89a9e8331?q=80&w=2342&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop",
     title: "Wellness Hamper",
     category: "Lifestyle"
   },
@@ -51,7 +51,7 @@ const portfolioItems = [
   },
   {
     id: "8",
-    image: "https://images.unsplash.com/photo-1601314214551-ae949a42f51e?q=80&w=2242&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop",
     title: "Anniversary Special",
     category: "Celebration"
   },

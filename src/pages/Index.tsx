@@ -18,7 +18,7 @@ const featuredProducts = [
   },
   {
     id: "2",
-    image: "https://images.unsplash.com/photo-1608185944099-7638db8051a6?q=80&w=2487&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop",
     title: "Luxury Tea Collection",
     category: "Premium"
   },
@@ -30,7 +30,7 @@ const featuredProducts = [
   },
   {
     id: "4",
-    image: "https://images.unsplash.com/photo-1612277676054-89c89a9e8331?q=80&w=2342&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop",
     title: "Wellness Hamper",
     category: "Lifestyle"
   }
@@ -78,9 +78,9 @@ const partners = [
 ];
 
 const PartnersSection = () => (
-  <section className="py-24">
+  <section className="py-16">
     <div className="container mx-auto px-4 md:px-6">
-      <div className="text-center mb-16">
+      <div className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-4">Our Partners</h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Collaborating with the best to deliver exceptional gifting experiences.
@@ -253,7 +253,7 @@ const Index = () => {
       {/* Contact Section */}
       <section id="contact-section">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-4xl md:text-6xl font-serif font-semibold mb-4">Contact Us</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Get in touch with us to discuss your corporate gifting needs.
