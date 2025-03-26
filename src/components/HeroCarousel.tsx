@@ -37,7 +37,12 @@ const heroSlides = [
     description: 'Thoughtfully curated premium gifts for your business partners',
     primaryButton: {
       text: 'Explore Collection',
-      link: '/portfolio'  // Updated to direct link
+      action: () => {
+        const portfolioSection = document.getElementById('portfolio-section');
+        if (portfolioSection) {
+          portfolioSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     },
     secondaryButton: {
       text: 'Contact Us',
@@ -55,7 +60,12 @@ const heroSlides = [
     description: 'Customized gift hampers for every occasion',
     primaryButton: {
       text: 'Explore Collection',
-      link: '/portfolio'  // Updated to direct link
+      action: () => {
+        const portfolioSection = document.getElementById('portfolio-section');
+        if (portfolioSection) {
+          portfolioSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     },
     secondaryButton: {
       text: 'Contact Us',
@@ -73,7 +83,12 @@ const heroSlides = [
     description: 'Elegant and personalized gifting solutions',
     primaryButton: {
       text: 'Explore Collection',
-      link: '/portfolio'  // Updated to direct link
+      action: () => {
+        const portfolioSection = document.getElementById('portfolio-section');
+        if (portfolioSection) {
+          portfolioSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     },
     secondaryButton: {
       text: 'Contact Us',
@@ -149,9 +164,9 @@ const HeroCarousel = () => {
                 {slide.description}
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-                <a href={slide.primaryButton.link} className="btn-primary min-w-[180px]">
+                <button onClick={slide.primaryButton.action} className="btn-primary min-w-[180px]">
                   {slide.primaryButton.text}
-                </a>
+                </button>
                 <button className="btn-outline border-white text-white hover:bg-white hover:text-primary min-w-[180px]" onClick={slide.secondaryButton.action}>
                   {slide.secondaryButton.text}
                 </button>
