@@ -100,7 +100,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden focus:outline-none text-white"
+            className="md:hidden focus:outline-none text-black" // Changed from text-white to text-black
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}

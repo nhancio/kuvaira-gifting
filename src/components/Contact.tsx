@@ -35,42 +35,44 @@ const Contact = () => {
   return (
     <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="space-y-10"
-          >
-            <div>
-              <h2 className="text-3xl font-medium mb-6">
-                Let's Start a Conversation
-              </h2>
-              <p className="text-muted-foreground mb-10">
-                Whether you have a question about our products, custom orders, or want to discuss a bulk order for your next corporate event, our team is here to help.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 gap-8">
-              {contactInfo.map((item, index) => (
-                <div key={index} className="p-6 bg-background rounded-lg border border-border">
-                  <div className="flex items-center space-x-3 mb-4">
-                    {item.icon}
-                    <h3 className="font-medium text-lg">{item.title}</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="w-full max-w-none sm:max-w-none md:max-w-none">
+            {/* Contact Information */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="space-y-10"
+            >
+              <div>
+                <h2 className="text-3xl font-medium mb-6">
+                  Let's Start a Conversation
+                </h2>
+                <p className="text-muted-foreground mb-10">
+                  Whether you have a question about our products, custom orders, or want to discuss a bulk order for your next corporate event, our team is here to help.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 gap-8">
+                {contactInfo.map((item, index) => (
+                  <div key={index} className="p-6 bg-background rounded-lg border border-border">
+                    <div className="flex items-center space-x-3 mb-4">
+                      {item.icon}
+                      <h3 className="font-medium text-lg">{item.title}</h3>
+                    </div>
+                    <div className="space-y-1">
+                      {item.details.map((detail, i) => (
+                        <p key={i} className="text-muted-foreground">
+                          {detail}
+                        </p>
+                      ))}
+                    </div>
                   </div>
-                  <div className="space-y-1">
-                    {item.details.map((detail, i) => (
-                      <p key={i} className="text-muted-foreground">
-                        {detail}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
           
           {/* Contact Form */}
           <motion.div

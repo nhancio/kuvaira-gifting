@@ -135,22 +135,20 @@ const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative w-screen h-screen overflow-hidden">
       {/* Carousel slides */}
       {heroSlides.map((slide, index) => (
         <div
           key={index}
-          className={cn(
-            "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-            currentSlide === index ? "opacity-100 z-10" : "opacity-0 z-0"
-          )}
+          style={{ transform: `translateX(${(index - currentSlide) * 100}%)` }}
+          className="absolute inset-0 w-full h-full transition-transform duration-500 ease-out"
         >
           {/* Background Image with overlay */}
           <div className="absolute inset-0 bg-black/30 z-10"></div>
           <img
             src={slide.image}
             alt={slide.title}
-            className="w-full h-full object-cover opacity-100 animate-image-fade" // Added opacity here
+            className="w-full h-full object-cover object-center"
             onLoad={handleImageLoad}
           />
           

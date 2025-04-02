@@ -70,7 +70,7 @@ const partners = [
     id: 2,
     name: "Reel Sync Studio",
     description: "Media Production Partner",
-    logo: null
+    logo: "/logo/reelsync-logo.png"  // Updated this line
   },
   {
     id: 3,
