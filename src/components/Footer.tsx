@@ -1,9 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Gift, Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+
+  const scrollToSection = (sectionId: string) => {
+    if (window.location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } });
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <footer className="bg-muted py-8">
@@ -34,11 +46,14 @@ const Footer = () => {
           {/* Column 2 - Quick Links */}
           <div className="space-y-4">
             <h3 className="text-base font-semibold">Quick Links</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                <button 
+                  onClick={() => scrollToSection('home-section')} 
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Home
-                </Link>
+                </button>
               </li>
               <li>
                 <Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">
@@ -46,14 +61,20 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                <button 
+                  onClick={() => scrollToSection('about-section')} 
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   About Us
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                <button 
+                  onClick={() => scrollToSection('contact-section')} 
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Contact Us
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -61,31 +82,31 @@ const Footer = () => {
           {/* Column 3 - Services */}
           <div className="space-y-4">
             <h3 className="text-base font-semibold">Our Offerings</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground cursor-default">
                   Corporate Gifts
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground cursor-default">
                   Custom Packaging
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground cursor-default">
                   Personalized Gifts
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground cursor-default">
                   Bulk Orders
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="text-muted-foreground cursor-default">
                   Seasonal Gifting
-                </a>
+                </span>
               </li>
             </ul>
           </div>

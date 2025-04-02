@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -94,6 +94,10 @@ const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [filteredItems, setFilteredItems] = useState(portfolioItems);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const filterItems = (category: string) => {
     setActiveCategory(category);
