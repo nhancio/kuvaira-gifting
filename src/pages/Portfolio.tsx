@@ -7,59 +7,83 @@ import GiftCard from '@/components/GiftCard';
 
 // Portfolio items data
 const portfolioItems = [
+  // Festive Collection
   {
     id: "1",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop",
-    title: "Executive Gift Set",
-    category: "Corporate"
+    image: "/images/festive-gift-1.jpeg",
+    title: "Diwali Special Box",
+    category: "Festive"
   },
   {
     id: "2",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop",
-    title: "Luxury Tea Collection",
-    category: "Premium"
+    image: "/images/new-year.png",
+    title: "New Year Celebration Kit",
+    category: "Festive"
   },
+  // Wedding Collection
   {
     id: "3",
-    image: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=2215&auto=format&fit=crop",
-    title: "Custom Stationery Kit",
-    category: "Personalized"
+    image: "/images/wedding.png",
+    title: "Wedding Welcome Kit",
+    category: "Wedding"
   },
   {
     id: "4",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop",
-    title: "Wellness Hamper",
-    category: "Lifestyle"
+    image: "/images/wedding-2.png",
+    title: "Couple Gift Set",
+    category: "Wedding"
   },
+  // Onboarding Collection
   {
     id: "5",
-    image: "https://images.unsplash.com/photo-1592903297149-37fb25202dfa?q=80&w=2342&auto=format&fit=crop",
-    title: "Diwali Special Box",
-    category: "Seasonal"
+    image: "/images/onboarding-gift-1.jpeg",
+    title: "Welcome Kit Premium",
+    category: "Onboarding"
   },
   {
     id: "6",
-    image: "https://images.unsplash.com/photo-1513267048331-5611cad62e41?q=80&w=2370&auto=format&fit=crop",
-    title: "Tech Gadget Bundle",
-    category: "Corporate"
+    image: "/images/onboarding-gift-2.jpeg",
+    title: "New Joiner Package",
+    category: "Onboarding"
   },
+  // Electronic Gadgets
   {
     id: "7",
-    image: "https://images.unsplash.com/photo-1511923199659-1c16881689de?q=80&w=2487&auto=format&fit=crop",
-    title: "Handcrafted Chocolates",
-    category: "Gourmet"
+    image: "/images/electronic-gift-1.jfif",
+    title: "Tech Essentials Pack",
+    category: "Electronic Gadgets"
   },
   {
     id: "8",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop",
-    title: "Anniversary Special",
-    category: "Celebration"
+    image: "/images/electronic-gift-2.png",
+    title: "Smart Workspace Bundle",
+    category: "Electronic Gadgets"
   },
+  // Hampers
   {
     id: "9",
-    image: "https://images.unsplash.com/photo-1480072723304-5021e468de85?q=80&w=2487&auto=format&fit=crop",
-    title: "Sustainable Gift Box",
-    category: "Eco-Friendly"
+    image: "/images/hamper-1.jpeg",
+    title: "Gourmet Delight Hamper",
+    category: "Hampers"
+  },
+  {
+    id: "10",
+    image: "/images/hamper-2.jpeg",
+    title: "Wellness & Spa Hamper",
+    category: "Hampers"
+  },
+  // Gift Sets
+  {
+    id: "11",
+    image: "/images/hero-gift-collections.jpeg",
+    title: "Executive Desk Set",
+    category: "Gift Sets"
+  },
+  {
+    id: "12",
+    image: "/images/corporate-gift-2.jpeg",
+    title: "Premium Stationery Set",
+    category: "Gift Sets"
   }
 ];
 

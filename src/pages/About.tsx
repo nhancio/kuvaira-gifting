@@ -34,7 +34,7 @@ const About = () => {
               viewport={{ once: true }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop" 
+                src="/images/about-story.jpeg" 
                 alt="Our Story" 
                 className="w-full h-[500px] object-cover rounded-lg shadow-md"
               />

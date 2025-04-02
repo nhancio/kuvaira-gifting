@@ -12,19 +12,19 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=2215&auto=format&fit=crop',
+    image: '/images/hero-corporate-gifts.jpeg',
     title: 'Exclusive Corporate Gifts',
     subtitle: 'Thoughtfully curated premium gifts for your business partners'
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop',
+    image: '/images/hero-gift-collections.jpeg',
     title: 'Bespoke Gift Collections',
     subtitle: 'Customized gift hampers for every occasion'
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?q=80&w=2370&auto=format&fit=crop',
+    image: '/images/lifestyle-gift-1.jpeg',
     title: 'Personalized Luxury',
     subtitle: 'Elegant and personalized gifting solutions'
   }
@@ -32,7 +32,7 @@ const slides: Slide[] = [
 
 const heroSlides = [
   {
-    image: 'https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=2215&auto=format&fit=crop',
+    image: '/images/hero-corporate-gifts.jpeg',
     title: 'Exclusive Corporate Gifts',
     description: 'Thoughtfully curated premium gifts for your business partners',
     primaryButton: {
@@ -55,7 +55,7 @@ const heroSlides = [
     }
   },
   {
-    image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop',
+    image: '/images/hero-gift-collections.jpeg',
     title: 'Bespoke Gift Collections',
     description: 'Customized gift hampers for every occasion',
     primaryButton: {
@@ -78,7 +78,7 @@ const heroSlides = [
     }
   },
   {
-    image: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?q=80&w=2370&auto=format&fit=crop',
+    image: '/images/lifestyle-gift-1.jpeg',
     title: 'Personalized Luxury',
     description: 'Elegant and personalized gifting solutions',
     primaryButton: {

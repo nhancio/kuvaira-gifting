@@ -12,27 +12,27 @@ import { Gift, Clock, Package, Users, ArrowRight, Star } from 'lucide-react';
 const featuredProducts = [
   {
     id: "1",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop",
-    title: "Executive Gift Set",
-    category: "Corporate"
+    image: "/images/festive-gift-1.jpeg",
+    title: "Diwali Special Box",
+    category: "Festive"
   },
   {
     id: "2",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop",
-    title: "Luxury Tea Collection",
-    category: "Premium"
+    image: "/images/onboarding-gift-1.jpeg",
+    title: "Welcome Kit Premium",
+    category: "Onboarding"
   },
   {
     id: "3",
-    image: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=2215&auto=format&fit=crop",
-    title: "Custom Stationery Kit",
-    category: "Personalized"
+    image: "/images/electronic-gift-1.jfif",
+    title: "Tech Essentials Pack",
+    category: "Electronic Gadgets"
   },
   {
     id: "4",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=2340&auto=format&fit=crop",
-    title: "Wellness Hamper",
-    category: "Lifestyle"
+    image: "/images/hamper-1.jpeg",
+    title: "Gourmet Delight Hamper",
+    category: "Hampers"
   }
 ];
 
@@ -63,17 +63,17 @@ const partners = [
   {
     id: 1,
     name: "Crafts by Shravs",
-    description: "Inhouse design studio"
+    description: "Inhouse Design Studio"
   },
   {
     id: 2,
     name: "Reel Sync Studio",
-    description: "Media production partner"
+    description: "Media Production Partner"
   },
   {
     id: 3,
     name: "Nhancio",
-    description: "Software partner and client"
+    description: "Technology Partner"
   }
 ];
 
