@@ -12,19 +12,19 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    image: '/images/hero-corporate-gifts.jpeg',
+    image: '/images/banner1.jpg',
     title: 'Exclusive Corporate Gifts',
     subtitle: 'Thoughtfully curated premium gifts for your business partners'
   },
   {
     id: 2,
-    image: '/images/hero-gift-collections.jpeg',
+    image: '/images/banner2.jpg',
     title: 'Bespoke Gift Collections',
     subtitle: 'Customized gift hampers for every occasion'
   },
   {
     id: 3,
-    image: '/images/lifestyle-gift-1.jpeg',
+    image: '/images/banner3.jpg',
     title: 'Personalized Luxury',
     subtitle: 'Elegant and personalized gifting solutions'
   }
@@ -32,7 +32,7 @@ const slides: Slide[] = [
 
 const heroSlides = [
   {
-    image: '/images/hero-corporate-gifts.jpeg',
+    image: '/images/banner1.jpg',
     title: 'Exclusive Corporate Gifts',
     description: 'Thoughtfully curated premium gifts for your business partners',
     primaryButton: {
@@ -55,7 +55,7 @@ const heroSlides = [
     }
   },
   {
-    image: '/images/hero-gift-collections.jpeg',
+    image: '/images/banner2.jpg',
     title: 'Bespoke Gift Collections',
     description: 'Customized gift hampers for every occasion',
     primaryButton: {
@@ -78,7 +78,7 @@ const heroSlides = [
     }
   },
   {
-    image: '/images/lifestyle-gift-1.jpeg',
+    image: '/images/banner3.jpg',
     title: 'Personalized Luxury',
     description: 'Elegant and personalized gifting solutions',
     primaryButton: {
