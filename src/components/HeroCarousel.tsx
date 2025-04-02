@@ -135,7 +135,7 @@ const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-x-hidden">
       {/* Carousel slides */}
       {heroSlides.map((slide, index) => (
         <div
@@ -148,7 +148,7 @@ const HeroCarousel = () => {
           <img
             src={slide.image}
             alt={slide.title}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover"
             onLoad={handleImageLoad}
           />
           
