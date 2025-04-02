@@ -63,17 +63,20 @@ const partners = [
   {
     id: 1,
     name: "Crafts by Shravs",
-    description: "Inhouse Design Studio"
+    description: "Inhouse Design Studio",
+    logo: "/logo/cbs-logo.png"  // Update path based on your image location
   },
   {
     id: 2,
     name: "Reel Sync Studio",
-    description: "Media Production Partner"
+    description: "Media Production Partner",
+    logo: null
   },
   {
     id: 3,
     name: "Nhancio",
-    description: "Technology Partner"
+    description: "Technology Partner",
+    logo: "/logo/nhancio-logo.png"  // Update path based on your image location
   }
 ];
 
@@ -97,6 +100,15 @@ const PartnersSection = () => (
             viewport={{ once: true }}
             className="bg-white p-8 rounded-lg shadow-sm border border-border text-center"
           >
+            {partner.logo && (
+              <div className="mb-4 flex justify-center">
+                <img 
+                  src={partner.logo} 
+                  alt={`${partner.name} logo`}
+                  className="h-16 w-auto object-contain"
+                />
+              </div>
+            )}
             <h3 className="text-xl font-serif font-medium mb-2">{partner.name}</h3>
             <p className="text-muted-foreground">{partner.description}</p>
           </motion.div>
